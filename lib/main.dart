@@ -1,5 +1,8 @@
 import 'package:employee_view_app/pages/add_new_user/add_new_user_bloc/add_new_user_bloc.dart';
+import 'package:employee_view_app/pages/home/my_home_bloc/my_home_bloc.dart';
 import 'package:employee_view_app/pages/home/my_home_page.dart';
+import 'package:employee_view_app/pages/login/login_bloc/login_bloc.dart';
+import 'package:employee_view_app/pages/main/main_bloc/main_bloc.dart';
 import 'package:employee_view_app/router/router.dart';
 import 'package:employee_view_app/router/routing_constant.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +23,17 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AddNewUserBloc(),
         ),
+        BlocProvider(
+          create: (context) => MyHomeBloc(),
+        ),
+        BlocProvider(
+          create: (context) => LoginBloc(),
+        ),
+        BlocProvider(
+          create: (context) => MainBloc(),
+        ),
       ],
-      child: BlocBuilder<AddNewUserBloc, AddNewUserState>(
+      child: BlocBuilder<MainBloc, MainState>(
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
