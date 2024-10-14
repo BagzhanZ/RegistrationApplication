@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           create: (context) => AddNewUserBloc(),
         ),
         BlocProvider(
-          create: (context) => MyHomeBloc(),
+          create: (context) => MyHomeBloc()..add(MyHomeInitialEvent()),
         ),
         BlocProvider(
           create: (context) => LoginBloc(),
